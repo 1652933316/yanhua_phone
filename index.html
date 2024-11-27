@@ -176,26 +176,26 @@
 			localStorage.setItem('templateDate', JSON.stringify(res));
 			//by@wht
 			let returnPwd = res.data.password
-			//拦截是否有密码，有密码弹出模态框，输入密码校验
-			if (res.data.password != null && res.data.password != '') {
-				$("#modalTxt").html(res.data.question)
-				$("#commitModal").show();
-			}
+			// //拦截是否有密码，有密码弹出模态框，输入密码校验
+			// if (res.data.password != null && res.data.password != '') {
+			// 	$("#modalTxt").html(res.data.question)
+			// 	$("#commitModal").show();
+			// }
 
-			//点击确定密码按钮
-			$("#sureBtn").click(function () {
-				let userPwd = $.trim($("#pswInput").val());
-				if (userPwd == null || userPwd == '') {
-					errorSnackbar('请输入密码')
-					return;
-				}
-				if (userPwd !== returnPwd) {
-					errorSnackbar('密码错误')
-					return;
-				} else {
-					$("#commitModal").hide();
-				}
-			})
+			// //点击确定密码按钮
+			// $("#sureBtn").click(function () {
+			// 	let userPwd = $.trim($("#pswInput").val());
+			// 	if (userPwd == null || userPwd == '') {
+			// 		errorSnackbar('请输入密码')
+			// 		return;
+			// 	}
+			// 	if (userPwd !== returnPwd) {
+			// 		errorSnackbar('密码错误')
+			// 		return;
+			// 	} else {
+			// 		$("#commitModal").hide();
+			// 	}
+			// })
 
 			document.title = res.data.title;
 			if(res.data.type == 1) {
